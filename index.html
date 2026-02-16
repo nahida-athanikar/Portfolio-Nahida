@@ -1,55 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Nahida Athanikar | Portfolio</title>
   <link rel="stylesheet" href="font.css">
   <link rel="stylesheet" href="output.css">
   <link rel="stylesheet" href="./style.css">
-  <script src="./matter.js" defer></script>
-  
-</head>
-<body class="bg-[#111] text-white font-['Nunito']">
-  <section class="flex flex-col justify-between h-screen">
+  <script src="main.js"></script>
 
-    <header class="z-10 pointer-events-none flex items-center justify-between w-full pr-4 max-w-screen-xl mx-auto">
+   <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #1788ae;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: #23b9eb;
+      }
+
+      #typewriter::after {
+        content: '|';
+        animation: blink 1s infinite step-end;
+        position: relative;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    </style>
+</head>
+
+<body class="bg-[#111] text-white font-['Nunito']">
+  <section class="flex flex-col justify-between h-screen mt-0 ">
+
+    <!-- Header (Navbar) -->
+    <header class="z-10 flex items-center justify-between w-full pr-4 max-w-screen-xl mx-auto">
         <img class="w-[80px] h-[90px]" src="./assets/images/LogoWhite2.png" alt="logo">
 
-      <div class="flex gap-6">
-    
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <div class="flex gap-8 text-white font-medium">
+        
+        <a href="https://www.linkedin.com/in/nahida-athanikar-nadaf-a0152028b" target="_blank">
+            <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512  512">
+              <path
+                  fill="currentColor"
+                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+            </svg>
+        </a>
 
+        <a href="mailto:nahidathanikar24@gmail.com" target="_blank">
+          <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+          fill="currentColor"
+          d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+          </svg>
+        </a>
+        
+        <a href="#" target="_blank">
+            <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+          <path
+            fill="currentColor"
+          d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+        </a>
 
-      <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 448 512"><path fill="white" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
-    </div>
+      </div>
     </header>
 
     <!-- Animation -->
-    <div class="absolute insert-0 hidden md:block max-w-full" id="wrapper-canvas">
-     
+    <div class="absolute insent-0 hidden md:block max-w-full" id="wrapper-canvas">
     </div>
 
-    <div class="flex -mt-16 relative">
+
+    <!-- Main Body  -->
+    <div class="flex mt-10 sm:mt-25 relative">
       <div class="w-full px-7 max-w-screen-xl mx-auto">
-        <img src="./assets/images/hdLogoBlue.png" alt="logo-blue" class="pointer-events-none absolute top-3 -translate-y-1/4 left-1/3 translate-x-1/3 w-[170px] sm:w-[300px] md:w-[400px] lg:w-[600px] h-auto mr-30"> 
-        <div class="relative ml-4 md:ml-12">
-           <h1 class="text-[15px] xs:text-[25px] sm:text-[35px] md:text-[45px] lg:text-[60px] font-['Spartan'] relative ml-7 mr-12 pointer-events-none">Nahida Athanikar Nadaf</h1>
-        <p class="pointer-events-none font-['Marriweather'] italic mb-4 md:mb-8 ml-8 relative">MERN Stack Developer</p>
+        <img src="./assets/images/hdLogoBlue.png" alt="logo-blue" class="pointer-events-none hidden sm:block absolute top-[95px] -translate-y-1/3 left-1/3 translate-x-1/4 w-[150px] sm:w-[300px] md:w-[400px] lg:w-[600px] h-auto lg:mr-30"> 
+        <div class="relative ml-0 md:ml-12 text-center md:text-left space-y-4 sm:space-y-5">
+          <p class="sm:text-1xl md:text-2xl mb-2 sm:mb-3 md:mb-4 lg:ml-7 font-['Spartan'] text-[#199eca] sm:items-center sm:justify-center" >Welcome to my portfolio!</p>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 lg:ml-7 font-['Spartan']">Hii, I am <span class="inline-block animate-wave" role="img" aria-labelledby="wave">👋🏻</span></h2>
+           <h1 class="text-2xl sm:text-3xl md:text-[36px] font-bold mb-2 sm:mb-3 md:mb-4 lg:ml-7 font-['Spartan'] pointer-events-none">Nahida Athanikar Nadaf</h1>
+          <p class="pointer-events-none text-sm sm:text-base md:text-lg mb-2 sm:mb-3 md:mb-4 lg:ml-7 relative font-['Marriweather'] "><span id="typewriter" class="inline-block relative text-xl sm:text-2xl font-semibold text-[#199eca] "></span></p>
 
-        <button class="hover:scale-110 duration-150 bg-[#4595eb] py-2 px-5 ml-8 rounded-full font-extrabold bg-gradient-to-l
-        from-[#1595b6] to-[#1f2667e6]  relative group">About Me 
+        <a href="#about">
+          <button class="hover:scale-110 duration-150 bg-[#4595eb] py-2 px-5 lg:ml-8 top-5 rounded-full font-extrabold bg-gradient-to-l
+          from-[#1595b6] to-[#1f2667e6] relative group">About Me 
 
-        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0" y="0" width="44" height="44" class="absolute -translate-y-1/4 -right-6 top-1/3 group-hover:-right-8 duration-150 ease-in-out" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;" d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z" fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
-     
-        </button>
+          <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0" y="0" width="44" height="44" class="absolute -translate-y-1/4 -right-6 top-1/3 group-hover:-right-8 duration-150 ease-in-out" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;" d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z" fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
+      
+          </button>
+        </a>
+
+        <!-- AI Assistant Teaser -->
+        <div id="voiceBot" class="md:hidden relative flex flex-col items-center">
+          <img 
+            id="aiBot"
+            src="./assets/images/chatbot.webp" 
+            alt="AI Assistant"
+            class="w-[250px] h-[250px] mx-5   object-contain cursor-pointer
+                  hover:scale-110
+                  transition duration-300
+                  drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]
+                  animate-float"
+          />
+
+          <p id="voiceStatus"
+            class="-mt-10 text-md text-cyan-400 text-center tracking-wide transition-all duration-300">
+            Tap to Talk 🎤
+          </p>
+        </div>
+
       </div>
-    </div>
+      </div>
         
-        <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
+        <ul class="hidden sm:block ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
         <li>
           <a href="https://www.linkedin.com/in/nahida-athanikar-nadaf-a0152028b" target="_blank">
-            <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
                   fill="currentColor"
                   d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
@@ -58,8 +144,8 @@
         </li>
 
         <li>
-          <a href="mailto:nahidathanikar18@gmail.com" target="_blank">
-          <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <a href="mailto:nahidathanikar24@gmail.com" target="_blank">
+          <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
           fill="currentColor"
           d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
@@ -68,8 +154,8 @@
         </li>
 
         <li>
-          <a href="https://github.com/nahida-athanikar" target="_blank">
-            <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+          <a href="#" target="_blank">
+            <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
           <path
             fill="currentColor"
           d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
@@ -78,7 +164,7 @@
         </li>
 
         <li>
-          <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <svg class="w-7 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path
           fill="currentColor"
           d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
@@ -86,319 +172,1029 @@
         </li>
         </ul>
     </div>
-    <div class="relative self-center after:left-[59%] after:-translate-x-1/2 after:top-[88px]">
-      <button class="hover:scale-110 py-2 px-5 duration-150 bg-[#4595eb] rounded-full font-extrabold bg-gradient-to-l
+    
+    <!-- Latest Work Button -->
+    <a href="#project">
+      <div class="relative self-center after:left-[59%] after:-translate-x-1/2 after:top-[88px]">
+      <button class="hover:scale-110 active:scale-95 py-2 px-5 duration-150 bg-[#4595eb] rounded-full font-extrabold bg-gradient-to-l
         from-[#1595b6] to-[#1f2667e6]  relative group mb-16">Latest Works 
 
-        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0" y="0" width="44" height="44" class="absolute rotate-90 -translate-x-1/4 top-10 left-14 group-hover:top-12 duration-150 ease-in-out" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;" d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z" fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
+        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0" y="0" width="44" height="44" class="absolute rotate-90 -translate-x-1/4 top-10 left-14 group-hover:translate-y-2 group-active:top-11 transition-all duration-200
+ ease-in-out" viewBox="0 0 100 125"><g transform="translate(0,-952.36218)"><path style="text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;" d="m 88.999835,1002.3621 c 0,-0.4628 -0.2799,-1.0773 -0.5639,-1.3755 l -15.9997,-17.00026 c -0.747,-0.7723 -1.9572,-0.8618 -2.8281,-0.078 -0.7786,0.7007 -0.798,2.0673 -0.078,2.8282 l 12.8435,13.62516 -69.37347,0 c -1.1046,0 -2,0.8954 -2,2 0,1.1046 0.8954,2.0001 2,2.0001 l 69.37347,0 -12.8435,13.6252 c -0.7199,0.7608 -0.6688,2.0938 0.078,2.8281 0.7885,0.7752 2.0925,0.7062 2.8281,-0.078 l 15.9997,-17.0002 c 0.4701,-0.4611 0.556,-0.9052 0.5639,-1.3748 z" fill="#fff" fill-opacity="1" stroke="white" stroke-width="2" marker="none" visibility="visible" display="inline" overflow="visible"/></g></svg>
      
       </button>
+    </a>
+    
     </div>
     
   </section>
   
-   </section>
 
-    <section class="max-w-screen-xl mx-auto px-4 relative">
+    <!-- Latest Project Section -->
+  <section id="project"  class="max-w-screen-xl mx-auto px-4 relative">
       <h2
-        class="text-[32px] sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 text-center w-max mx-auto text-[#1788ae] border-b-2 border-[#1788ae]"
+        class="text-[32px] sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 text-center w-max mx-auto text-[#199eca] border-b-2 border-[#199eca]"
       >
-        Latest Works
+        Latest Projects
       </h2>
 
       <!-- 1st project adeed -->
-      <div class="flex flex-col md:flex-row gap-10 items-center mt-12 relative">
-
-        <!-- Connected line with laptop -->
-        <div class="hidden md:block  h-[2px] left-1/4  right-1/2  bg-[#fc815c] absolute top-1/2"></div>
-        <a href="https://www.harigurus.com/">
-           <div class="hidden md:block lg:block w-4 h-4 rounded-full border-[3px] border-[#fc815c] absolute left-1/2 -translate-x-1/2 bg-[white] z-10 hover:scale-110 ease-in-out duration-100 -mt-[8px]">
-          </div>
-        </a>
-        <!-- is href me project link dalni h -->
-        <a href="#" class="w-full flex justify-center sm:justify-center mt-8">
-
-          <div class="relative group hover:scale-105 transition-transform duration-200">
-            <!-- tool  tip -->
-            <span class="hidden sm:flex group-hover:-top-14 lg:flex group-hover:-top-11 duration-200 ease-jump bg-[#fc815c] sm:absolute px-3 py-2 top-5 sm:left-[100px] lg:left-[40%]  sm:translate-x-[40px] md:-translate-x-1/4 lg:-translate-x-[85px] xl:-translate-x-[160px] text-sm sm:text-base mt-2 rounded-full w-max items-center gap-2
-          sm:after:block after:w-5 after:h-5 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Harigurus
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </span>
-              <!-- laptopk ke andr ki image -->
+       <div
+        class="flex flex-col sm:flex-row gap-4 mt-10 sm:gap-[80px] items-center sm:mt-20 relative"
+      >
+        <div
+          class="h-[1px] left-1/4 right-1/2 bg-[#ffe578] absolute top-1/2 hidden sm:block"
+        ></div>
+        <div
+          class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+        ></div>
+        <a
+          href="https://rk-motors-blond.vercel.app"
+          class="flex w-full relative justify-center sm:justify-start" target="_blank"
+        >
+          <div
+            class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200"
+          >
             <img
-            class="max-w-[400px] relative md:-ml-[70px] lg:-ml-[120px] xl:-ml-[250px] z-10 hover:drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
-            src="./assets/images/shoper2.webp"
-            alt=""
-          />
+              class="max-w-[400px] w-full mr-auto relative z-10 hover:drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+              src="./assets/images/Untitled.webp"
+              alt=""
+            />
+            <span
+              class="flex group-hover:-top-14 ease-jump duration-200 bg-[#ffe578] text-black sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded-full w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
+              >RK Motors
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-external-link"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </span>
           </div>
         </a>
-        <!-- Project Info div -->
-        <div class="w-full sm:text-center lg:text-left mt-0 lg:mt-0">
-          <h3 class="text-[#fc815c] sm:text-center md:text-center lg:text-left font-bold text-4xl">Harigurus</h3>
-          <span class="text-[#fc815c] sm:text-center md:text-center lg:text-left text-base">(Event Booking)</span>
-          <p class="text-base sm:text md:text lg:text text-justify">
-            HariGurus is a one-stop-shop for all Hindu religious, customs and
-            traditional requirements. Built the complete site from scratch.
-          </p>
 
-          <!-- Tech stack tag in button shape -->
-          <ul class="flex flex-wrap lg:justify-start gap-2 mt-4">
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #react.js
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #express.js
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #node.js
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #swiper.js
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #mongoDB
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #mongoose
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #css
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #javascript
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">
-              #figma
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 2nd project adeed -->
-      <div class="flex gap-[80px] items-center mt-12 relative">
         <div class="w-full">
-
-          <h3 class="text-[#ffe578] font-bold text-4xl">EazyGrad</h3>
-          <span class="text-[#ffe578] text-lg">(EdTech Startup)</span>
-          <p class="text-justify mt-2">
-            Being a lead developer, revamped the site to a highly responsive,
-            and interactive website. Created new features and pages. Worked as a
-            team with product manager and ux designer.
+          <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
+            RK Motors – AI Car Marketplace
+          </h3>
+          <p class="text-justify text-sm md:text-base mt-2">
+            Developed an AI-driven marketplace integrating Gemini API for intelligent car recommendations, dynamic search optimization, and enhanced user experience, reducing manual browsing and improving discovery efficiency.
           </p>
 
           <ul class="flex flex-wrap gap-2 mt-2">
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #react.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #React.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #express.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Next.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #node.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Node.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #swiper.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Express.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #mongoDB
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #PostgreSQL
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #mongoose
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Supabase
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #css
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Gemini AI API
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #javascript
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #figma
-            </li>
+            
           </ul>
         </div>
-        
-        <!-- Line and circle connect with lappi -->
-        <div class="h-[2px] left-1/2  right-1/4  bg-[#ffe578] absolute top-1/2"></div>
-        <a href="https://www.harigurus.com/">
-           <div class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[white] z-10 hover:scale-110 ease-in-out duration-100 -mt-[8px]">
-          </div>
-        </a>
-
-        <a href="#" class="w-full flex">
-          <div class="relative group hover:scale-105 ease-in-out duration-200 ml-auto">
-            <span class="flex group-hover:-top-11 duration-200 ease-jump text-black bg-[#ffe578] px-3 py-2 absolute top-5 left-1/2 -translate-x-1/2 rounded-full w-max items-center gap-2 after:content-[''] after:w-5 after:h-5 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">EazyGrad
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </span>
-            <img
-            class="max-w-[400px] relative"
-            src="./assets/images/shoper2.webp"
-            alt=""
-          />
-          </div>
-        </a>
-        
       </div>
 
+
+      <!-- 2nd project adeed -->
+     <div
+        class="flex flex-col sm:flex-row gap-4 mt-10 sm:gap-[80px] items-center sm:mt-10 relative"
+      >
+      <!-- project info div -->
+        <div class="order-2 sm:order-1 w-full">
+          <h3 class="text-[#459bd5] font-bold text-2xl md:text-4xl">
+            WanderNest
+          </h3>
+          <span class="text-[#459bd5] text-base md:text-lg"
+            >(Travel & Stay Booking Platform)</span
+          >
+          <p class="text-justify text-sm md:text-base mt-2">
+            Designed and implemented a production-ready travel booking platform integrating AI-powered intelligent search, geospatial mapping, secure authentication with Passport.js, and cloud media management via Cloudinary.
+          </p>
+
+          <!-- tech stack div -->
+          <ul class="flex flex-wrap gap-2 mt-4">
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Javascript
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Vanila CSS 
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Bootstrap
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Node.js
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Express.js
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #MongoDB
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Cloudinary
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Mapbox
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Passport.js
+            </li>
+            
+          </ul>
+        </div>
+
+        <div
+          class="h-[1px] left-1/2 right-1/4 bg-[#459bd5] absolute top-1/2 hidden sm:block"
+        ></div>
+
+        <div
+          class="w-4 h-4 rounded-full border-[3px] border-[#459bd5] absolute left-1/2 -translate-x-1/2 bg-[white] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+        ></div>
+      
+        <!-- esme a tag me project link dalni hai -->
+        <a
+          href="https://wandernest-w9b9.onrender.com"
+          class="order-1 sm:order-2 flex w-full relative justify-center sm:justify-start"
+        >
+          <div
+            class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 sm:ml-auto"
+          >
+            <img
+              class="max-w-[400px] w-full relative z-10 hover:drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+              src="./assets/images/Untitled (1).webp"
+              alt=""
+            />
+             <!-- tooltip -->
+            <span
+              class="flex group-hover:-top-14 ease-jump duration-200 bg-[#459bd5] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded-full w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
+              >WanderNest
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-external-link"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </span>
+          </div>
+        </a>
+     </div>
+
       <!-- Line in center -->
-      <div class="w-[2px] hidden md:block  bg-[#1788ae] absolute top-0 bottom-0 left-1/2 -translate-x-1/2"></div>
+      <div class="w-[2px] bg-[#199eca] absolute top-0 bottom-0 left-1/2 -translate-x-1/2 hidden sm:block"></div>
 
 
       <!-- 3rd project adeed -->
-      <div class="flex gap-[80px] items-center mt-12 relative">
-
-        <!-- Connected line with laptop -->
-        <div class="h-[2px] left-1/4  right-1/2  bg-[#fc815c] absolute top-1/2"></div>
-        <a href="https://www.harigurus.com/">
-           <div class="w-4 h-4 rounded-full border-[3px] border-[#fc815c] absolute left-1/2 -translate-x-1/2 bg-[white] z-10 hover:scale-110 ease-in-out duration-100 -mt-[8px]">
-          </div>
-        </a>
-       
-        <a href="#" class="w-full flex">
-
-          <div class="relative group hover:scale-105 ease-in-out duration-200">
-            <!-- tool  tip -->
-            <span class="flex group-hover:-top-11 duration-200 ease-jump bg-[#fc815c] px-3 py-2 absolute top-5 left-1/2 -translate-x-1/2 rounded-full w-max items-center gap-2 after:content-[''] after:w-5 after:h-5 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">Harigurus
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </span>
-              <!-- laptopk ke andr ki image -->
+      <div
+        class="flex flex-col sm:flex-row gap-4 mt-10 sm:gap-[80px] items-center sm:mt-20 relative"
+      >
+        <div
+          class="h-[1px] left-1/4 right-1/2 bg-[#ffe578] absolute top-1/2 hidden sm:block"
+        ></div>
+        <div
+          class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+        ></div>
+        <a
+          href="https://ai-code-reviewer-six-rho.vercel.app"
+          class="flex w-full relative justify-center sm:justify-start"
+        >
+          <div
+            class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 "
+          >
             <img
-            class="max-w-[400px] mr-auto relative"
-            src="./assets/images/shoper2.webp"
-            alt=""
-          />
+              class="max-w-[400px] w-full mr-auto relative z-10 hover:drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+              src="./assets/images/Untitled (2).png"
+              alt=""
+            />
+            <span
+              class="flex group-hover:-top-14 ease-jump duration-200 text-black bg-[#ffe578] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded-full w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
+              >AI Code Reviewer
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-external-link"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </span>
           </div>
         </a>
 
         <div class="w-full">
-          <h3 class="text-[#fc815c] font-bold text-4xl">Harigurus</h3>
-          <span class="text-[#fc815c] text-lg">(Event Booking)</span>
-          <p class="text-justify mt-2">
-            HariGurus is a one-stop-shop for all Hindu religious, customs and
-            traditional requirements. Built the complete site from scratch.
+          <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
+            AI Code Reviewer
+          </h3>
+          <span class="text-[#ffe578] text-base md:text-lg"
+            >(AI-Powered Code Analysis Tool)</span
+          >
+          <p class="text-justify text-sm md:text-base mt-2">
+            Intelligent online code editor & AI analysis app giving real-time feedback, suggestions and syntax insights to write better code.
           </p>
 
           <ul class="flex flex-wrap gap-2 mt-2">
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #react.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #React.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #express.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Express.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #node.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Node.js
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #swiper.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Gemini API
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #mongoDB
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Tailwind CSS
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #mongoose
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #MongoDB
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #css
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #javascript
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #figma
-            </li>
+            
           </ul>
         </div>
       </div>
 
       <!-- 4th project adeed -->
-      <div class="flex gap-[80px] items-center mt-12 relative">
-        <div class="w-full">
-
-          <h3 class="text-[#ffe578] font-bold text-4xl">EazyGrad</h3>
-          <span class="text-[#ffe578] text-lg">(EdTech Startup)</span>
-          <p class="text-justify mt-2">
-            Being a lead developer, revamped the site to a highly responsive,
-            and interactive website. Created new features and pages. Worked as a
-            team with product manager and ux designer.
+     <div
+        class="flex flex-col sm:flex-row gap-4 mt-10 sm:gap-[80px] items-center sm:mt-10 relative"
+      >
+      <!-- project info div -->
+        <div class="order-2 sm:order-1 w-full">
+          <h3 class="text-[#459bd5] font-bold text-2xl md:text-4xl">
+            Shoppers
+          </h3>
+          <span class="text-[#459bd5] text-base md:text-lg"
+            >(E-commerce website)</span
+          >
+          <p class="text-justify text-sm md:text-base mt-2">
+            Frontend-only e-commerce interface with dynamic category navigation, product grid layout, interactive cart icon and responsive design, built with clean markup and modular styling for a professional shopping experience.
           </p>
 
-          <ul class="flex flex-wrap gap-2 mt-2">
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #react.js
+          <!-- tech stack div -->
+          <ul class="flex flex-wrap gap-2 mt-4">
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #HTML
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #express.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #CSS
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #node.js
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Javascript
             </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #swiper.js
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #mongoDB
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #mongoose
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #css
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #javascript
-            </li>
-            <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px]">
-              #figma
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Tailwind CSS
             </li>
           </ul>
         </div>
-        
-        <!-- Line and circle connect with lappi -->
-        <div class="h-[2px] left-1/2  right-1/4  bg-[#ffe578] absolute top-1/2"></div>
-        <a href="https://www.harigurus.com/">
-           <div class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[white] z-10 hover:scale-110 ease-in-out duration-100 -mt-[8px]">
-          </div>
-        </a>
 
-        <a href="#" class="w-full flex">
-          <div class="relative group hover:scale-105 ease-in-out duration-200 ml-auto">
-            <span class="flex group-hover:-top-11 duration-200 ease-jump text-black bg-[#ffe578] px-3 py-2 absolute top-5 left-1/2 -translate-x-1/2 rounded-full w-max items-center gap-2 after:content-[''] after:w-5 after:h-5 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2">EazyGrad
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </span>
+        <div
+          class="h-[1px] left-1/2 right-1/4 bg-[#459bd5] absolute top-1/2 hidden sm:block"
+        ></div>
+               
+        <div
+          class="w-4 h-4 rounded-full border-[3px] border-[#459bd5] absolute left-1/2 -translate-x-1/2 bg-[white] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+        ></div>
+      
+        <!-- esme a tag me project link dalni hai -->
+        <a
+          href="https://shoppers-online-shop.netlify.app/"
+          class="order-1 sm:order-2 flex w-full relative justify-center sm:justify-start"
+        >
+          <div
+            class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 sm:ml-auto"
+          >
             <img
-            class="max-w-[400px] relative"
-            src="./assets/images/shoper2.webp"
-            alt=""
-          />
+              class="max-w-[400px] w-full relative z-10 hover:drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+              src="./assets/images/Untitled (3).webp"
+            />
+             <!-- tooltip -->
+            <span
+              class="flex group-hover:-top-14 ease-jump duration-200 bg-[#459bd5] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded-full w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
+              >Shoppers
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-external-link"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </span>
           </div>
         </a>
-        
-      </div>
+     </div>
 
       <!-- Line in center -->
-      <div class="w-[2px] hidden md:block bg-[#1788ae] absolute top-0 bottom-0 left-1/2 -translate-x-1/2"></div>
-    </section>
+      <div class="w-[2px] bg-[#199eca] absolute top-0 bottom-0 left-1/2 -translate-x-1/2 hidden sm:block"></div>
+
+      <!-- 5th project adeed -->
+      <div
+        class="flex flex-col sm:flex-row gap-4 mt-10 sm:gap-[80px] items-center sm:mt-20 relative"
+      >
+        <div
+          class="h-[1px] left-1/4 right-1/2 bg-[#ffe578] absolute top-1/2 hidden sm:block"
+        ></div>
+        <div
+          class="w-4 h-4 rounded-full border-[3px] border-[#ffe578] absolute left-1/2 -translate-x-1/2 bg-[#111] z-10 hover:scale-110 ease-in-out duration-100 hidden sm:block"
+        ></div>
+        <a
+          href="#"
+          class="flex w-full relative justify-center sm:justify-start"
+        >
+          <div
+            class="flex flex-col items-center relative group sm:hover:scale-105 ease-in-out duration-200 "
+          >
+            <img
+              class="max-w-[400px] w-full mr-auto relative z-10 hover:drop-shadow-[0_0px_60px_rgba(59,130,246,0.6)]"
+              src="./assets/images/Untitled (4).webp"
+              alt=""
+            />
+            <span
+              class="flex group-hover:-top-14 ease-jump duration-200 text-black bg-[#ffe578] sm:absolute left-1/2 sm:-translate-x-1/2 top-5 px-2 py-1 text-sm sm:text-base mt-2 rounded-full w-max items-center gap-1 after:hidden sm:after:block after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2"
+              >DineSphere
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-external-link"
+              >
+                <path
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                ></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <div class="w-full">
+          <h3 class="text-[#ffe578] font-bold text-2xl md:text-4xl">
+            DineSphere
+          </h3>
+          <span class="text-[#ffe578] text-base md:text-lg"
+            >(Restaurant Seat Booking Website)</span
+          >
+          <p class="text-justify text-sm md:text-base mt-2">
+            Responsive restaurant booking frontend that allows users to explore menu highlights and reserve seats seamlessly — designed with an elegant UI and smooth user experience.
+          </p>
+
+          <ul class="flex flex-wrap gap-2 mt-2">
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #HTML
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #CSS
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Javascript
+            </li>
+            <li
+              class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base"
+            >
+              #Bootstrap
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-[#eeeff7e6] mx-auto mb-6 hidden sm:block"></div>
+  </section>
+    
+
+   <!-- ABOUT SECTION -->
+  <section id="about" class="py-16 text-white">
+      <div class="container mx-auto px-6 lg:px-20">
+        <!-- Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Left Column (About Info) -->
+          <div>
+            <h2 class="text-[32px] sm:text-[40px] relative z-10 font-bold px-4 py-2 text-center w-max mx-auto text-[#199eca] border-b-2 border-[#199eca] mb-4">
+              About <span class="text-white">Me</span>
+            </h2>
+            <p class="pointer-events-none text-[#fff] text-md md:text-lg relative text-center leading-relaxed">
+              Hi, I'm <span class="text-[#199eca] font-semibold">Nahida Athanikar Nadaf</span>, 
+a final-year Engineering student at Sanjeevan Group of Institutions (Graduating in 2026) with a CGPA of 8.6. 
+I am deeply interested in <span class="text-[#199eca] font-semibold">Artificial Intelligence and Software Development</span> and enjoy building scalable, real-world applications. As a Full-Stack Developer, I have developed AI-integrated platforms and performance-focused web solutions with clean and maintainable code. I am passionate about creating intelligent digital experiences that are efficient, user-friendly, and impactful.
+
+            </p>
+          </div>
+
+        <!-- Right Column (Egg Shape + Pulse Glow Animation) -->
+        <div data-tilt class="flex justify-center group relative">
+          <div class="relative p-1 rounded-[50%_70%] neon-glow">
+            <div class="relative rounded-[50%_70%] border-8 border-[#199eca] transition-transform duration-500 transform group-hover:scale-105">
+              
+              <img src="assets/images/myPhoto3.jpg" alt="Nahida Athanikar"
+                  class="w-[18rem] h-[22rem] lg:w-[25rem] md:w-[24rem] md:h-[32rem] lg:h-[32rem] object-cover rounded-[50%_70%]">
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+  </section>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
-    <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script> 
+
+    <!-- ACADEMIC JOURNEY SECTION -->
+  <section id="education" class="text-white">
+      <div class="container mx-auto px-6 lg:px-20">
+        <h2 class="text-[32px] sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 text-center w-max mx-auto text-[#199eca] border-b-2 border-[#199eca] mb-8">
+          Academic <span class="text-white">Journey</span>
+        </h2>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-zinc-900 bg-opacity-50 border border-zinc-700 p-6 rounded-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-[#199eca] backdrop-blur-sm
+">
+        <div class="flex justify-between items-start mb-4">
+          <div class="p-3 bg-gray-800 rounded-full  items-center">
+            <img src="assets/images/10th.png" alt="10th" class="w-14 h-14">
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">10th Grade</h3>
+        <h4 class="text-xl text-gray-300 mb-4">Usharaje High School, Kolhapur</h4>
+
+        <div class="mb-4">
+          <div class="flex justify-between mb-1 text-gray-300">
+            <span>Performance</span>
+            <span class="text-[#199eca] font-medium">82%</span>
+          </div>
+          <div class="w-full bg-gray-700 h-2 rounded-full">
+            <div class="bg-[#199eca] h-2 rounded-full" style="width:82%;"></div>
+          </div>
+        </div>
+
+        <p class="text-gray-300">Year: 2019-2020</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-zinc-900 bg-opacity-50 border border-zinc-700 p-6 rounded-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-[#199eca]">
+        <div class="flex justify-between items-start mb-4">
+          <div class="p-3 bg-gray-800 rounded-full">
+            <img src="assets/images/book.png" alt="12th" class="w-14 h-14">
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">12th Grade</h3>
+        <h4 class="text-xl text-gray-300 mb-4">Nehru High School & Junior College, Kolhapur</h4>
+
+        <div class="mb-4">
+          <div class="flex justify-between mb-1 text-gray-300">
+            <span>Performance</span>
+            <span class="text-[#199eca] font-medium">71%</span>
+          </div>
+          <div class="w-full bg-gray-700 h-2 rounded-full">
+            <div class="bg-[#199eca] h-2 rounded-full" style="width:71%;"></div>
+          </div>
+        </div>
+
+        <p class="text-gray-300">Year: 2021-2022</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-zinc-900 bg-opacity-50 border border-zinc-700 p-6 rounded-lg hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-[#199eca]">
+        <div class="flex justify-between items-start mb-4">
+          <div class="p-3 bg-gray-800 rounded-full">
+          <img src="assets/images/cap.png" alt="12th" class="w-14 h-14">
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">B.Tech IT</h3>
+        <h4 class="text-xl text-gray-300 mb-4">Sanjeevan Group of Institution Panhala, Kolhapur</h4>
+
+        <div class="mb-4">
+          <div class="flex justify-between mb-1 text-gray-300">
+            <span>Performance</span>
+            <span class="text-[#199eca] font-medium">8.4 CGPA</span>
+          </div>
+          <div class="w-full bg-gray-700 h-2 rounded-full">
+            <div class="bg-[#199eca] h-2 rounded-full" style="width:84%;"></div>
+          </div>
+        </div>
+
+        <p class="text-gray-300">Year: 2022-2026</p>
+      </div>
+
+    </div>
+
+
+      </div>
+  </section>
+
+
+    <!-- Skills -->
+  <section id="skills" class="max-w-screen-xl mx-auto px-6 py-16 relative">
+  <h2
+    class="text-[32px] sm:text-[40px] font-bold text-center text-[#199eca] border-b-2 border-[#199eca] w-max mx-auto mb-4">
+    Skills
+  </h2>
+   <p class="pointer-events-none text-[#fff] text-md md:text-lg relative mb-10 text-center">
+    A collection of my technical skills and expertise honed through various projects and experiences
+  </p>
+  <!-- Cards Container -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+     <!-- Frontend -->
+<div data-tilt class="border border-cyan-400 rounded-2xl p-6 shadow-lg">
+  <h3 class="text-xl font-semibold mb-6 text-white text-center">Frontend</h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/html5-original.svg" alt="HTML" class="w-8 h-8 object-contain"/>
+      <span class="text-white">HTML</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/css3-original.svg" alt="HTML" class="w-8 h-8 object-contain"/>
+      <span class="text-white">CSS</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-2 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/javascript-original.svg" alt="HTML" class="w-8 h-8 object-contain"/>
+      <span class="text-white">JavaScript</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/react-original.svg" alt="HTML" class="w-8 h-8 object-contain"/>
+      <span class="text-white">React.js</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/redux-original.svg" alt="HTML" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Redux</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/nextjs-original.svg" alt="HTML" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Next.js</span>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- Backend -->
+<div data-tilt class="border border-cyan-400 rounded-2xl p-6 shadow-lg">
+  <h3 class="text-xl font-semibold mb-6 text-white">Backend</h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/nodejs-original.svg" alt="Node.js" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Node.js</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-2 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/express-original.svg" alt="Express.js" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Express.js</span>
+    </div>
+
+    <div class="w-auto h-auto flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/java-original.svg" alt="Java" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Java</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Databases & Cloud -->
+<div data-tilt class="border border-cyan-400 rounded-2xl p-6 shadow-lg">
+  <h3 class="text-xl font-semibold mb-6 text-white">Databases & Cloud</h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/mysql-original.svg" alt="SQL" class="w-8 h-8 object-contain"/>
+      <span class="text-white">SQL</span>
+    </div>
+
+    <div class="flex items-center gap-1 px-2 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/mongodb-original.svg" alt="MongoDB" class="w-8 h-8 object-contain"/>
+      <span class="text-white">MongoDB</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/mysql-original.svg" alt="MySQL" class="w-8 h-8 object-contain"/>
+      <span class="text-white">MySQL</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-2 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/azure-original.svg" alt="Microsoft Azure" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Microsoft Azure</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Languages -->
+<div data-tilt class="border border-cyan-400 rounded-2xl p-6 shadow-lg">
+  <h3 class="text-xl font-semibold mb-6 text-white text-center">Languages</h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+
+    <div class="flex items-center gap-2 px-4 py-2 
+            bg-white/5 backdrop-blur-md border border-white 
+            rounded-lg">
+      <img src="assets/images/c-original.svg" alt="C" class="w-8 h-8 object-contain"/>
+      <span class="text-white">C</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2  bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/java-original.svg" alt="Java" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Java</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2  bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/python-original.svg" alt="Python" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Python</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-2 py-2  bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/javascript-original.svg" alt="JavaScript" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Javascript</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Tools -->
+<div data-tilt class="border border-cyan-400 rounded-2xl p-6 shadow-lg">
+  <h3 class="text-xl font-semibold mb-6 text-white">Tools</h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/git-original.svg" alt="Git" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Git</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/github-original.svg" alt="GitHub" class="w-8 h-8 object-contain"/>
+      <span class="text-white">GitHub</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/vscode-original.svg" alt="VS Code" class="w-8 h-8 object-contain"/>
+      <span class="text-white">VS Code</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/getpostman-icon.svg" alt="Postman" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Postman</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/logo-vercel.svg" alt="Vercel" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Vercel</span>
+    </div>
+
+    <div class="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white rounded-lg">
+      <img src="assets/images/render.svg" alt="render" class="w-8 h-8 object-contain"/>
+      <span class="text-white">Render</span>
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
+
+  </div>
+  </section>
+
+     <!-- Milestone and achievements -->
+  <section class="text-center mx-5">
+      <h2 class="pointer-events-none font-bold text-3xl md:text-4xl lg:text-5xl mb-4 text-[#199eca]">
+        Milestones & Achievements
+      </h2> 
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-[#eeeff7e6] mx-auto mb-6"></div>
+      <p class="pointer-events-none text-[#fff] text-md md:text-lg relative mb-4">
+        A showcase of my technical journey and accomplishments that highlight my growth and expertise in the world of software development.
+      </p>
+
+      <!-- Swiper Container -->
+      <div class="swiper mySwiper py-10 sm:py-20 md:py-24 lg:py-32 -mt-5">
+        <div class="swiper-wrapper items-center">
+
+          <div class="swiper-slide flex justify-center my-10">
+            <img
+              class="rounded-lg shadow-2xl cursor-grab w-[250px] sm:w-[400px] md:w-[400px] lg:w-[500px]  h-auto transition duration-700 ease-in-out transform hover:scale-110 hover:rotate-1"
+              src="assets/images/Contributor's badge.jpg"
+              alt="Code Crafter Challenge"
+            />
+          </div>
+
+          <div class="swiper-slide flex justify-center my-10">
+            <img
+              class="rounded-lg shadow-2xl cursor-grab w-[250px] sm:w-[400px] md:w-[500px] lg:w-[550px] xl:w-[550px] h-auto transition duration-700 ease-in-out transform hover:scale-110 hover:rotate-1"
+              src="assets/images/Microsoft Learn AI Skills Challenge Certificate  (1)-1.png"
+              alt="Microsoft AI Certificate"
+            />
+          </div>
+
+          <div class="swiper-slide flex justify-center my-10">
+            <img
+              class="rounded-lg shadow-2xl cursor-grab w-[250px] sm:w-[400px] md:w-[500px] lg:w-[550px] xl:w-[550px] h-auto transition duration-700 ease-in-out transform hover:scale-110 hover:rotate-1"
+              src="assets/images/html&css.png"
+              alt="HTML & CSS Certificate"
+            />
+          </div>
+
+          <div class="swiper-slide flex justify-center my-10">
+            <img
+              class="rounded-lg shadow-2xl cursor-grab w-[250px] sm:w-[400px] md:w-[500px] lg:w-[550px] xl:w-[550px] h-auto transition duration-700 ease-in-out transform hover:scale-110 hover:rotate-1"
+              src="assets/images/code crafter challenge-1.png"
+              alt="Code Crafter Challenge"
+            />
+          </div>
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  </section>
+
+
+
+    <!-- Form Page -->
+  <section class="max-w-screen-xl mx-auto px-4 mb-10">
+      <h2
+        class="text-3xl sm:text-[40px] bg-[#111] relative z-10 font-bold px-4 py-2 w-max mx-auto text-center text-[#199eca] border-2 border-[#199eca] rounded-full"
+      >
+        Let's Connect
+      </h2>
+      
+
+      <div class="flex items-center mt-10">
+        <div class="w-full hidden sm:block">
+          <img class="w-full" src="./assets/images/contact-me.svg" alt="contact">
+        </div>
+
+        <form class="w-full">
+          <label for="name" class="block mb-2 mt-4 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+          <div class="relative mb-4">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+            </svg>
+            </div>
+            <input type="text" id="name" name="name" class="bg-gray-50 border-2 outline-none  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your name">
+          </div>
+
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+          <div class="relative mb-4">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+              </svg>
+            </div>
+            <input type="text" id="email" name="email" class="bg-gray-50 border-2 outline-none  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your email">
+          </div>
+ 
+          <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Message</label>
+          <div class="relative mb-4">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+             
+            </div>
+            <textarea id="message" name="message" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border-2 outline-none  border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+          </div>
+         <button
+            type="submit"
+            class="w-full text-white bg-text-[#199eca] bg-[#199eca] focus:ring-4 focus:ring-[#4489a0] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
+          >
+            Send
+          </button>
+
+        </form>
+      </div>
+  </section>
+
+
+    <!-- Footer -->
+  <footer class="flex flex-col items-center pb-10 pt-5">
+      <p class="text-md  text-gray-300">Nahida Athanikar Nadaf</p>
+      <div class="black-logo my-4">
+        <img class="w-[100px] h-[100px]" src="./assets/images/hdLogoBlue.png" alt="logo">
+      </div>
+
+      <ul class="mx-auto flex items-center justify-center gap-6 text-[#b0b2c3]">
+        <li>
+          <a href="https://www.linkedin.com/in/nahida-athanikar-nadaf-a0152028b" target="_blank">
+            <svg class="w-5 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                  fill="currentColor"
+                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:nahidathanikar24@gmail.com" target="_blank">
+          <svg class="w-5 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+          fill="currentColor"
+          d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+          </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">
+            <svg class="w-5 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+          <path
+            fill="currentColor"
+          d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+          </a>
+        </li>
+
+        <li>
+          <svg class="w-5 hover:text-white hover:scale-110 duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+          fill="currentColor"
+          d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+          </svg>
+        </li>
+        
+      </ul>
+
+       <!-- Copyright -->
+    <p class="text-xs my-4 text-gray-500">
+      © 2026 All rights reserved.
+    </p>
+  </footer>
+
+    <!-- Swiper JS (at bottom of body) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" differ></script>
+  <script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    autoplay: {
+      delay: 2300,
+      disableOnInteraction: false,
+    },
+    coverflowEffect: {
+      rotate: 20,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js" defer></script>
+    <script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js" defer></script> 
    
+  <script src="./matter.js" defer></script>
 
 
 

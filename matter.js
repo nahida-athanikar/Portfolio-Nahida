@@ -1,3 +1,5 @@
+
+
 var canvas = document.querySelector("#wrapper-canvas");
 
 var dimensions = {
@@ -69,8 +71,9 @@ function runMatter() {
         attractors: [
           function (bodyA, bodyB) {
             return {
-              x: (bodyA.position.x - bodyB.position.x) * 1e-6,
-              y: (bodyA.position.y - bodyB.position.y) * 1e-6,
+              x: (bodyA.position.x - bodyB.position.x) * 9e-7,
+              y: (bodyA.position.y - bodyB.position.y) * 9e-7,
+
             };
           },
         ],
@@ -81,7 +84,9 @@ function runMatter() {
   World.add(world, attractiveBody);
 
   // add some bodies that to be attracted
-  for (var i = 0; i < 60; i += 1) {
+  const bodyCount = window.innerWidth < 1200 ? 30 : 35;
+
+  for (var i = 0; i < bodyCount; i++) {
     let x = Common.random(0, render.options.width);
     let y = Common.random(0, render.options.height);
     let s =
@@ -96,10 +101,10 @@ function runMatter() {
       {
         mass: s / 20,
         friction: 0,
-        frictionAir: 0.02,
+        frictionAir: 0.01,
         angle: Math.round(Math.random() * 360),
         render: {
-          fillStyle: "#222222",
+          fillStyle: "#2f2f2f",
           strokeStyle: `#000000`,
           lineWidth: 2,
         },
@@ -114,7 +119,7 @@ function runMatter() {
       friction: 0,
       frictionAir: 0.01,
       render: {
-        fillStyle: r > 0.3 ? `#27292d` : `#444444`,
+        fillStyle: r > 0.3 ? `#32363b` : `#4a4f55`,
         strokeStyle: `#000000`,
         lineWidth: 2,
       },
@@ -140,7 +145,7 @@ function runMatter() {
       friction: 0.6,
       frictionAir: 0.8,
       render: {
-        fillStyle: `#191919`,
+        fillStyle: `#262626`,
         strokeStyle: `#111111`,
         lineWidth: 3,
       },
@@ -208,6 +213,31 @@ function setWindowSize() {
   return dimensions;
 }
 
-let m = runMatter();
-setWindowSize();
-$(window).resize(debounce(setWindowSize, 250));
+let m;
+
+if (window.innerWidth >= 768) {
+
+  window.addEventListener("load", () => {
+
+    setTimeout(() => {
+      m = runMatter();
+      setWindowSize();
+    }, 300);
+
+  });
+
+  window.addEventListener("resize", debounce(() => {
+    if (m) setWindowSize();
+  }, 250));
+
+}
+
+function setWindowSize() {
+  if (!m) return;
+
+  m.render.canvas.width = window.innerWidth;
+  m.render.canvas.height = window.innerHeight;
+}
+
+
+

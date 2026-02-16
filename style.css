@@ -1,3 +1,70 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 #wrapper-canvas canvas {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
+.neon-glow {
+  transition: box-shadow 0.5s ease;
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 20px #199eca, 0 0 40px #199eca;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hide bot on medium and larger screens */
+@media (min-width: 768px) {
+  #voiceBot {
+    display: none !important;
+  }
+}
+
+@keyframes aiPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(3, 211, 238, 0.5);
+  }
+
+  50% {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px 1px rgba(34, 211, 238, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
+  }
+}
+
+
+.listening {
+  animation: aiPulse 1.8s ease-in-out infinite;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+
+img {
+  user-select: none;
+}
+
+
+
+
+
+ 
+ 
