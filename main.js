@@ -119,7 +119,7 @@ function speak(text) {
     return "My key projects include RK Motors, an AI powered car marketplace, WanderNest travel booking platform, and an AI Code Reviewer that provides real time intelligent feedback.";
   }
 
-  if (msg.includes("cgpa")) {
+  if (msg.includes("")) {
     return "My current CGPA is 8 point 6 in Information Technology.";
   }
 
